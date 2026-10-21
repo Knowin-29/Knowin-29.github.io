@@ -1,17 +1,17 @@
-# Knowin Research — Project Index
+# SpatialLab
 
-Source for **https://knowin-29.github.io/**.
+A compact research project directory for **Foundation · Simulation · Demo**.
 
-- Live project pages: KnowinRouter (paper and code: EKT-Router), Anvil.
-- Forthcoming previews: KnowinMem and KnowinSpatial.
-- Preview cards intentionally have no project, data, or model download links.
+Live site: **https://knowin-29.github.io/**
 
-This is a static, English-language site with local assets, no build dependencies,
-no analytics, and no API credentials. Preview with `python -m http.server 8000`.
-The Pages workflow deploys the `main` branch.
+- KnowinRouter / EKT-Router and Anvil link to their existing project pages and code.
+- KnowinMem and KnowinSpatial are marked Coming soon, without placeholder links.
 
-Edit project descriptions, links, and release status in `index.html`; styles are
-in `style.css`. Change a preview to a live entry only after its destination exists.
-Publication of this index does not change either existing project repository.
+Static HTML/CSS with no build dependencies, analytics, or API credentials. Preview
+with `python -m http.server 8000`. The Pages workflow deploys `main`.
 
-See [NOTICE](NOTICE.md) for asset provenance and scope of the code license.
+Edit `index.html` for projects and `style.css` for layout. The compact panel fits
+common desktop viewports; smaller screens retain normal document scrolling.
+
+See [NOTICE](NOTICE.md) for project attribution and [LICENSE](LICENSE) for the
+retained source license.

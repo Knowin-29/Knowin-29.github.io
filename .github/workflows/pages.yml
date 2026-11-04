@@ -1,4 +1,4 @@
-name: Deploy SpatialLab
+name: Deploy KnowinSpatial Lab
 on:
   push:
     branches: [main]
@@ -24,6 +24,12 @@ jobs:
           test -s index.html
           test -s style.css
           test -s assets/favicon.svg
+          test -s KnowinMem/index.html
+          test -s KnowinMem/app.js
+          test -s KnowinMem/data/dashboard.json
+          test -s KnowinMem/data/samples.json
+          test -s KnowinMem/data/results.csv
+          test -s KnowinMem/reports/technical-roadmap.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

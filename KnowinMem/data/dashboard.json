@@ -1,0 +1,191 @@
+{
+  "updated": "2026-11-04",
+  "libero": [
+    {
+      "suite": "Spatial",
+      "n": 500,
+      "base": 490,
+      "successful": 492,
+      "paired": 491
+    },
+    {
+      "suite": "Object",
+      "n": 500,
+      "base": 495,
+      "successful": 493,
+      "paired": 494
+    },
+    {
+      "suite": "Goal",
+      "n": 500,
+      "base": 488,
+      "successful": 486,
+      "paired": 487
+    },
+    {
+      "suite": "Long",
+      "n": 500,
+      "base": 487,
+      "successful": 488,
+      "paired": 487
+    }
+  ],
+  "plus": [
+    {
+      "suite": "Spatial",
+      "n": 2402,
+      "base": 1805,
+      "successful": 1808,
+      "paired": 1803
+    },
+    {
+      "suite": "Object",
+      "n": 2518,
+      "base": 1745,
+      "successful": 1737,
+      "paired": 1744
+    },
+    {
+      "suite": "Goal",
+      "n": 2591,
+      "base": 1616,
+      "successful": 1619,
+      "paired": 1612
+    },
+    {
+      "suite": "Long",
+      "n": 2519,
+      "base": 1679,
+      "successful": 1698,
+      "paired": 1699
+    }
+  ],
+  "recovery": [
+    {
+      "name": "执行误差补偿",
+      "short": "Tracking",
+      "success": 720,
+      "recovered": 100
+    },
+    {
+      "name": "绝对目标纠错",
+      "short": "Absolute target",
+      "success": 683,
+      "recovered": 63
+    },
+    {
+      "name": "配对目标 · 真实历史",
+      "short": "Paired target",
+      "success": 718,
+      "recovered": 98,
+      "highlight": true
+    },
+    {
+      "name": "配对目标 · 等长度错配历史",
+      "short": "Reassigned history",
+      "success": 722,
+      "recovered": 102
+    },
+    {
+      "name": "匹配训练 · 常量上下文",
+      "short": "Constant context",
+      "success": 712,
+      "recovered": 92
+    }
+  ],
+  "efficiency": [
+    {
+      "name": "上下文关闭",
+      "p50": 141.4,
+      "p95": 146.2,
+      "memory": 3.697
+    },
+    {
+      "name": "成功上下文",
+      "p50": 157.2,
+      "p95": 166.4,
+      "memory": 3.697
+    },
+    {
+      "name": "完整 KIM 上下文",
+      "p50": 169.7,
+      "p95": 182.5,
+      "memory": 3.697
+    }
+  ],
+  "progress": [
+    {
+      "name": "LIBERO · 全目录评测",
+      "done": 2000,
+      "total": 2000,
+      "unit": "起点",
+      "status": "已完成",
+      "category": "已完成",
+      "description": "40 个任务，Spatial / Object / Goal / Long 四个套件；三种上下文条件。"
+    },
+    {
+      "name": "LIBERO-Plus · 扰动评测",
+      "done": 10030,
+      "total": 10030,
+      "unit": "实例",
+      "status": "已完成",
+      "category": "已完成",
+      "description": "相机、机器人初态、语言、光照、背景、噪声、布局七个扰动轴。"
+    },
+    {
+      "name": "独立配对纠错评测",
+      "done": 744,
+      "total": 744,
+      "unit": "首试组",
+      "status": "已完成",
+      "category": "已完成",
+      "description": "31 个任务 × 8 个新布局 × 3 种扰动；124 个首试失败，五种匹配重试。"
+    },
+    {
+      "name": "L20 · 决策效率",
+      "done": 840,
+      "total": 840,
+      "unit": "计时请求",
+      "status": "已完成",
+      "category": "已完成",
+      "description": "28 个固定输入，三种上下文条件，各 280 次计时；另有 84 次预热。"
+    },
+    {
+      "name": "RoboTwin · 训练数据准备",
+      "done": 19500,
+      "total": 27500,
+      "unit": "数值演示",
+      "status": "数据准备",
+      "category": "进行中",
+      "description": "84 / 100 个数据包已完成接入；按固定数据版本逐包处理。"
+    },
+    {
+      "name": "RoboTwin · 基座评测",
+      "done": 2324,
+      "total": 10000,
+      "unit": "已验收实例",
+      "status": "评测接续",
+      "category": "进行中",
+      "description": "50 个任务、两种环境配置；累计口径为既有 1,301 例与本轮新增已验收 1,023 例。"
+    },
+    {
+      "name": "RoboTwin · KIM 适配",
+      "done": 0,
+      "total": null,
+      "unit": "",
+      "status": "训练准备",
+      "category": "下一阶段",
+      "description": "衔接训练数据、支持样本与双臂控制接口，完成后进入同协议比较。"
+    },
+    {
+      "name": "跨轮学习与真机展示",
+      "done": 0,
+      "total": null,
+      "unit": "",
+      "status": "研究计划",
+      "category": "下一阶段",
+      "description": "经验积累、持续学习矩阵与真实机器人交互展示。"
+    }
+  ],
+  "progressSnapshot": "2026-11-04 11:35 UTC"
+}

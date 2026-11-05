@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "libero": [
     {
       "suite": "Spatial",
@@ -161,12 +161,12 @@
     },
     {
       "name": "RoboTwin · 基座评测",
-      "done": 3797,
+      "done": 5494,
       "total": 10000,
       "unit": "已验收实例",
       "status": "评测接续",
       "category": "进行中",
-      "description": "50 个任务、两种环境配置；既有 3,200 例与本地、云端新增 597 例按实例去重，逐例轨迹验收后计入进度。"
+      "description": "50 个任务、两种环境配置；本地两片新增 850 例已完成收尾验收，云端继续接续。四批来源按实例去重，已有 5,494 例通过轨迹验收。"
     },
     {
       "name": "RoboTwin · KIM 适配",
@@ -187,5 +187,5 @@
       "description": "经验积累、持续学习矩阵与真实机器人交互展示。"
     }
   ],
-  "progressSnapshot": "2026-11-04 17:46 UTC"
+  "progressSnapshot": "2026-11-05 02:45 UTC"
 }

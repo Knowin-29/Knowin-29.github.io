@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>四路同步：观察机器人恢复过程 · KnowinMem</title>
+  <meta name="description" content="两段四路同步视频，连接机器人执行过程、配对纠错与独立验证结果。">
+  <link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="../#demos"><span class="brand-mark">km</span><strong>KnowinMem</strong></a><a href="../#demos">返回 Demo ↗</a></header>
+<article class="article-page">
+  <header><p class="eyebrow">RECOVERY IN MOTION / 2026.11.06</p><h1>四路同步：<br>观察机器人恢复过程</h1><p class="intro">把共享首试与三种恢复策略放在同一时间轴上，观察动作如何分叉、任务如何完成。</p></header>
+  <h2>先看动作，再看终局</h2>
+  <p>两段视频都来自 LIBERO 长程操作任务：将字母汤罐和番茄酱罐放入篮子。每段包含四个面板，按控制步同步：左上为共享首试，右上为绝对目标纠错，左下为 Tracking 补偿，右下为配对目标纠错。每个面板保留外部相机与腕部相机，展示抓取、转移和放置的连续过程。</p>
+  <p>视频为 1060 × 886、20 帧/秒，每段 45.05 秒。成功执行结束后保持其终帧，画面标注 END FRAME HELD。底部 Final 显示该次执行的终局结果和总步数；播放时间采用原始录屏的编码帧率，推理效率单独见<a href="../#results/efficiency">效率面板</a>。</p>
+  <div class="table-wrap"><table><thead><tr><th>场景</th><th>首试</th><th>绝对目标</th><th>Tracking</th><th>配对目标</th></tr></thead><tbody>
+    <tr><td>正向 x 扰动</td><td>未完成 · 900 步</td><td>未完成 · 900 步</td><td>未完成 · 900 步</td><td>完成 · 495 步</td></tr>
+    <tr><td>负向 x 扰动</td><td>未完成 · 900 步</td><td>未完成 · 900 步</td><td>完成 · 265 步</td><td>未完成 · 900 步</td></tr>
+  </tbody></table></div>
+  <div class="actions"><a class="btn primary" href="../#demos">播放同步对照 →</a><a class="btn" href="../assets/comparison-01.mp4" download>下载案例 01</a><a class="btn" href="../assets/comparison-02.mp4" download>下载案例 02</a></div>
+  <h2>选例来自完整的配对记录</h2>
+  <p>在全部 124 个首试失败案例中，按案例标识字典序，分别选取配对目标相对 Tracking 的第一个胜例和第一个负例，选定后保持不变。两例恰好来自同一几何布局；每例内部共享首试和重试初态，两个扰动方向各自使用冻结的随机输入。该选例方式用于并列观察两种恢复过程，总体表现由全部案例计算。</p>
+  <p>这里展示历史条件输出纠错分支：利用已完成尝试的运动历史和误差估计，生成下一次尝试的动作修正。检索式特征适配在<a href="from-interaction.html">方法导读</a>中单独介绍。</p>
+  <h2>连接到 744 组独立验证</h2>
+  <p>独立验证覆盖 31 个任务、248 个新布局，每个布局三种条件。744 次共享首试中 620 次完成；124 个首试失败分别执行五种匹配重试，总计 1,364 次执行。所有重试从同一初态重置，模型权重在评测期间固定。</p>
+  <div class="table-wrap"><table><thead><tr><th>重试条件</th><th class="num">两次内成功</th><th class="num">首试失败恢复</th></tr></thead><tbody>
+    <tr><td>Tracking 补偿</td><td class="num">720 / 744</td><td class="num">100 / 124</td></tr>
+    <tr><td>绝对目标纠错</td><td class="num">683 / 744</td><td class="num">63 / 124</td></tr>
+    <tr class="emphasis"><td>配对目标 · 真实历史</td><td class="num">718 / 744</td><td class="num">98 / 124</td></tr>
+    <tr><td>配对目标 · 等长度错配历史</td><td class="num">722 / 744</td><td class="num">102 / 124</td></tr>
+    <tr><td>匹配训练 · 常量上下文</td><td class="num">712 / 744</td><td class="num">92 / 124</td></tr>
+  </tbody></table></div>
+  <p>配对目标相对 Tracking 有 11 个胜例、13 个负例；任务等权的配对差值为 −0.27 个百分点，95% 区间 [−1.34, 0.80]。配对目标相对绝对目标多完成 35 次任务，对应 +4.70 个百分点，95% 区间 [2.88, 6.53]。前者是预定主要比较，后者是训练目标的次要描述性比较。</p>
+  <div class="actions"><a class="btn" href="../#results/recovery">浏览完整结果 →</a><a class="btn" href="../data/paired-trials.csv" download>下载 744 组逐例结果</a><a class="btn" href="../data/comparisons.json" download>下载视频元数据与哈希</a></div>
+  <footer class="footer"><span>KnowinSpatial Lab · KnowinMem</span><a href="about.html">数据与素材来源 →</a></footer>
+</article></body></html>

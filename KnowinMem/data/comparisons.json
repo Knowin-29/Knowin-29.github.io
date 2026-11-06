@@ -1,0 +1,42 @@
+{
+  "published": "2026-11-06",
+  "branch": "history_conditioned_output_correction",
+  "selection": "124 个首试失败案例中，按案例标识字典序分别选择配对目标相对 Tracking 的第一个胜例和第一个负例；选定后保持不变。",
+  "panelOrder": ["共享首试", "绝对目标纠错", "Tracking 补偿", "配对目标纠错"],
+  "fps": 20,
+  "durationSeconds": 45.05,
+  "width": 1060,
+  "height": 886,
+  "playback": "按控制步同步；短片完成后保持终帧，标注 END FRAME HELD。Final 表示该次执行的终局结果。播放时间采用原录屏帧率。",
+  "sourceReportSha256": "7513b65997fca499bb8395aaa72c35154deb38d87326380aecca015d470b141f",
+  "cases": [
+    {
+      "id": "libero_10_00_confirm00_positive",
+      "title": "配对纠错完成入篮操作",
+      "condition": "正向 x 平移扰动",
+      "video": "assets/comparison-01.mp4",
+      "poster": "assets/comparison-01-poster.png",
+      "sha256": "396fffa9f9b0be3dba6dbd8708cbd0163ba4ab540ee657b18d773051b4a9bfe1",
+      "outcomes": [
+        {"name": "共享首试", "success": false, "steps": 900},
+        {"name": "绝对目标", "success": false, "steps": 900},
+        {"name": "Tracking", "success": false, "steps": 900},
+        {"name": "配对目标", "success": true, "steps": 495}
+      ]
+    },
+    {
+      "id": "libero_10_00_confirm00_negative",
+      "title": "误差补偿完成入篮操作",
+      "condition": "负向 x 平移扰动",
+      "video": "assets/comparison-02.mp4",
+      "poster": "assets/comparison-02-poster.png",
+      "sha256": "b851eaa56911dd99a1e2ceffb6ba90a5aa4865834dc1927c07129bcab91d79ab",
+      "outcomes": [
+        {"name": "共享首试", "success": false, "steps": 900},
+        {"name": "绝对目标", "success": false, "steps": 900},
+        {"name": "Tracking", "success": true, "steps": 265},
+        {"name": "配对目标", "success": false, "steps": 900}
+      ]
+    }
+  ]
+}

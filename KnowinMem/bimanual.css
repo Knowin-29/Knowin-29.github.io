@@ -1,0 +1,9 @@
+.bimanual-section { margin: 42px 0; }
+.bimanual-grid { margin-top: 20px; }
+.bimanual-card:first-child { grid-column: 1 / -1; }
+.bimanual-card video { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 432; object-fit: contain; background: #101f27; }
+.bimanual-card .video-copy > .small { display: inline-block; margin-top: 16px; }
+.bimanual-reading { padding: 20px 0; border-bottom: 1px solid var(--line, #dae3dc); }
+.bimanual-reading p { font-size: 13px; line-height: 1.8; color: var(--muted, #65766e); }
+.bimanual-reading .actions { gap: 12px 24px; font-size: 13px; }
+@media (max-width: 700px) { .bimanual-grid { grid-template-columns: minmax(0, 1fr); } .bimanual-card .video-title { align-items: flex-start; flex-wrap: wrap; } }

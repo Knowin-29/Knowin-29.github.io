@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>三相机视角下的双臂行动 · KnowinMem</title><meta name="description" content="从瓶子姿态调整到锤击与排序，通过三相机完整回放观察 KnowinMem 在 RoboTwin 中的闭环执行。"><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../style.css"></head>
+<body><header class="topbar"><a class="brand" href="../"><span class="brand-mark">km</span><strong>KnowinMem</strong></a><a href="../#blog">研究 Blog ↗</a></header>
+<article class="article-page"><header><p class="eyebrow">BIMANUAL ROLLOUTS / 2026.11.06</p><h1>三相机视角下的<br>双臂行动</h1><p class="intro">从瓶子的朝向，到锤头与积木的接触，再到彩色方块的位置关系：将双臂操作展开为连贯的观察、决策和动作。</p></header>
+<figure><img src="../assets/bimanual-01-poster.png" alt="瓶子姿态调整的起始观测：主视角、左腕相机与右腕相机" width="1024" height="432"><figcaption>主视角连接整个任务场景，双腕相机呈现手部与物体之间的局部关系。</figcaption></figure>
+<h2>01 / 从三个视角看同一次执行</h2>
+<p>五段视频记录配对上下文策略在 RoboTwin 中的闭环执行。主视角呈现场景和双臂姿态，左右腕相机保留各自的局部视野。画面同时标注动作命令与策略调用进度，便于观察一次动作分块如何连接到下一次决策。</p>
+<p>观看瓶子姿态调整时，可以沿着接近、接触和姿态变化观察操作；锤击案例可以对照主视角中的工具运动与腕部画面中的接触区域；方块排序则连接物体关系与连续的抓取动作。</p>
+<h2>02 / 连续呈现首批五条轨迹</h2>
+<p>展示集合取首个完整验收的 100 例配对上下文分片中原序前五例，按任务目录顺序呈现。每段保留全部观测帧和任务判定器给出的终局，具体信息如下。</p>
+<div class="table-wrap"><table><thead><tr><th>任务</th><th>场景</th><th class="num">动作命令</th><th class="num">策略调用</th><th>终局</th></tr></thead><tbody>
+<tr><td>瓶子姿态调整</td><td>Clean</td><td class="num">127</td><td class="num">5</td><td>任务完成</td></tr>
+<tr><td>瓶子姿态调整</td><td>Randomized</td><td class="num">300</td><td class="num">10</td><td>预算内未完成</td></tr>
+<tr><td>锤击积木</td><td>Clean</td><td class="num">109</td><td class="num">4</td><td>任务完成</td></tr>
+<tr><td>锤击积木</td><td>Randomized</td><td class="num">300</td><td class="num">10</td><td>预算内未完成</td></tr>
+<tr><td>彩色方块排序</td><td>Clean</td><td class="num">300</td><td class="num">10</td><td>预算内未完成</td></tr>
+</tbody></table></div>
+<h2>03 / 按观测事件回放</h2>
+<p>五段视频共保留 1,143 帧观测，以每秒 15 帧播放，三路相机在同一记录时刻并列显示。回放时长由观测帧数决定；策略计算、仿真推进和数据读取的墙钟等待不计入视频时间。画面中的命令数用于追踪执行进度，观测帧数包含起始及终局记录。</p>
+<p>每个模型共享 50 个任务、两种环境配置、每组 100 个专家准入布局，共 10,000 次执行。三模型共计 30,000 次条件执行，每例最多 10 次策略调用、每次 30 个动作命令，任务成功即停止。实验面板记录完整分片通过轨迹验收后的进度，完整评测按清洁与随机化场景分别汇总。</p>
+<h2>04 / 将数据、上下文与行动连起来</h2>
+<p>三种上下文策略沿用同一冻结底座与匹配训练条件。双臂演示将这一研究流程延伸到动作过程：读者可以从训练纪要了解支持的构造方式，再结合视频观察接触、运动和最终状态，并在实验面板跟踪后续执行。</p>
+<div class="actions"><a class="btn primary" href="../#demos">播放三相机视频 →</a><a class="btn" href="bimanual-adaptation.html">阅读训练纪要 →</a><a class="btn" href="../#experiments">查看实验进展 →</a><a class="btn" href="../data/bimanual.json" download>下载视频元数据 ↓</a></div>
+<footer class="footer"><span>KnowinSpatial Lab · KnowinMem 双臂演示导读</span><a href="about.html">数据与素材来源</a></footer></article></body></html>

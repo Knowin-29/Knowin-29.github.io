@@ -28,9 +28,17 @@ All navigation, filtering and random sampling run locally in the visitor's brows
 
 The November 6 training update adds a bimanual adaptation report, marks all three
 matched adapters as trained, and lists their shared-layout evaluation separately.
-The progress snapshot includes 8,526 accepted RoboTwin base-policy cases as of
-18:35 UTC. Existing evaluation tables, CSVs, videos and the 44-entry research
-index remain unchanged.
+The 22:17 UTC progress snapshot includes 9,102 accepted RoboTwin base-policy
+cases and the first 100 accepted paired-context executions. Three-model
+evaluation continues toward 30,000 executions on 10,000 shared layouts.
+
+The bimanual demo update adds five three-camera recordings and an eighth Blog
+report. The recordings follow the first accepted shard's original case order
+and retain all 1,143 observations at 15 observation frames per second, with
+terminal outcomes displayed for each case. Existing evaluation tables, CSVs,
+videos, the two synchronized comparisons and the 44-entry research index remain
+unchanged. For video seeking in local preview, use an HTTP server with Range
+support, such as `npx http-server -p 8000`.
 
 See [NOTICE](NOTICE.md) for project attribution and [LICENSE](LICENSE) for the
 retained source license.

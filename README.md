@@ -26,5 +26,11 @@ The November 4 release includes four evaluation panels, four paired video demos,
 twelve sample trajectories, six reports and a searchable 37-entry research index.
 All navigation, filtering and random sampling run locally in the visitor's browser.
 
+The November 6 training update adds a bimanual adaptation report, marks all three
+matched adapters as trained, and lists their shared-layout evaluation separately.
+The progress snapshot includes 8,526 accepted RoboTwin base-policy cases as of
+18:35 UTC. Existing evaluation tables, CSVs, videos and the 44-entry research
+index remain unchanged.
+
 See [NOTICE](NOTICE.md) for project attribution and [LICENSE](LICENSE) for the
 retained source license.

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>从双臂演示到三种上下文策略 · KnowinMem</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../style.css"></head>
+<body><header class="topbar"><a class="brand" href="../"><span class="brand-mark">km</span><strong>KnowinMem</strong></a><a href="../#blog">研究 Blog ↗</a></header>
+<article class="article-page"><header><p class="eyebrow">BIMANUAL ADAPTATION / 2026.11.06</p><h1>从双臂演示到<br>三种上下文策略</h1><p class="intro">KnowinMem 完成 RoboTwin 双臂数据准备、配对支持采集与三模型匹配训练，将交互记忆接入冻结 X-VLA 的动作生成过程。</p></header>
+<h2>01 / 以完整轨迹组织数据</h2>
+<p>数据覆盖 RoboTwin 2.0 的 50 个任务，每个任务包含 50 条清洁场景演示与 500 条随机化演示，共 27,500 条。相同任务初始化、重复运动和重复来源轨迹按组关联，训练与开发沿完整轨迹组划分，保持时序片段的来源一致。</p>
+<div class="table-wrap"><table><thead><tr><th>数据组成</th><th class="num">数量</th><th>用途</th></tr></thead><tbody><tr><td>训练演示</td><td class="num">21,826</td><td>支持构造与动作监督</td></tr><tr><td>开发演示</td><td class="num">5,537</td><td>固定开发窗口评估</td></tr><tr><td>预留评测种子关联演示</td><td class="num">137</td><td>独立于适配数据</td></tr><tr class="total"><td>总计</td><td class="num">27,500</td><td>50 个任务 × 2 种环境配置</td></tr></tbody></table></div>
+<h2>02 / 将执行差异变成配对支持</h2>
+<p>每个任务与配置选择四个不同的训练来源组，形成 400 个固定候选。其中 362 个获得成功专家执行；在对应布局上，冻结策略完成 189 次任务，另 173 次执行形成失败运动。将后者与专家运动配对，得到 173 条带场景、状态及运动差异的支持记录。</p>
+<p>查询轨迹与支持来源组分离。每个任务与配置选择六条训练轨迹和一条开发轨迹，每条提取两个窗口，形成 1,200 个训练窗口与 200 个开发窗口；其中分别有 1,104 和 184 个窗口能够检索到符合条件的支持。</p>
+<h2>03 / 同一训练条件下比较三种上下文</h2>
+<p>配对上下文、成功上下文和常量上下文三个适配器已各完成 1,200 次更新。三者共享初始化、查询顺序、动作监督与随机输入，更新从具有支持的训练窗口中调度；评测统一使用末次更新权重。</p>
+<div class="table-wrap"><table><thead><tr><th>上下文条件</th><th>输入设计</th><th class="num">已完成更新</th></tr></thead><tbody><tr><td>配对上下文</td><td>成功与失败运动及其关系</td><td class="num">1,200</td></tr><tr><td>成功上下文</td><td>成功运动参考</td><td class="num">1,200</td></tr><tr><td>常量上下文</td><td>固定上下文条件</td><td class="num">1,200</td></tr></tbody></table></div>
+<p>三模型沿用同一个冻结底座。训练后，底座的 903 个保存张量保持一致。这样的匹配设计让下一阶段能够在共同的动作接口、执行预算与任务目录上比较上下文条件。</p>
+<h2>04 / 接续双臂闭环评测</h2>
+<p>评测计划为每个任务与配置固定 100 个专家准入布局，即每个模型 10,000 次、三个模型合计 30,000 次条件执行。清洁与随机化场景分别汇总任务完成率。基座评测同步接续，最新已验收案例数量与各阶段状态列于实验面板。</p>
+<div class="actions"><a class="btn primary" href="../#experiments">查看实验进展 →</a><a class="btn" href="../#results">已完成评测 →</a><a class="btn" href="https://robotwin-platform.github.io/doc/">RoboTwin 官方项目 ↗</a></div>
+<footer class="footer"><span>KnowinSpatial Lab · KnowinMem 双臂训练纪要</span><a href="about.html">数据与素材来源</a></footer></article></body></html>

@@ -581,11 +581,17 @@
     "admission": "每个任务与设置使用预先冻结的 100 个专家准入布局",
     "client_source": "https://github.com/2toinf/X-VLA/tree/6c4ecfb8be458ae7c0c96094e4b0add4174f4fe2"
   },
-  "accepted_adapted_executions": 900,
+  "accepted_adapted_executions": 1100,
+  "adapted_progress_snapshot": "2026-11-07 21:50 UTC",
+  "accepted_adapted_by_role": {
+    "paired": 400,
+    "success": 400,
+    "constant": 300
+  },
   "shared_adapted_layouts": 300,
   "source_sha256": {
     "complete_base_summary": "e1f07023405c5770cd636d092a9e3aed133b360e0148e5d3451a3d735b0cc297",
     "base_handoff": "f0e00ada770fcf10e9c838d933976623b8e6d3d3e4d1369d8bd08871dad0513c",
-    "accepted_adapted_progress": "bc7ba41ec3d8fb502546b2c40471bded97e6d23b67a235872d3466ff7a2b57c8"
+    "accepted_adapted_progress": "615d10966792fb3bc300caea0f1550c4b417c107ca44c0bb5d9b8bf391e659e5"
   }
 }

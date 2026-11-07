@@ -42,3 +42,10 @@ support, such as `npx http-server -p 8000`.
 
 See [NOTICE](NOTICE.md) for project attribution and [LICENSE](LICENSE) for the
 retained source license.
+
+The November 7 base-policy release adds a fifth result panel and a ninth report:
+Frozen X-VLA-RoboTwin2 on 10,000 fixed layouts, with 66.04% clean and 23.68%
+randomized success. The complete 50-task table and 100-row CSV accompany the
+two aggregate rows in `results.csv`. The 19:50 UTC snapshot records 900 accepted
+KIM condition-layout executions (300 per condition on 300 shared layouts).
+Original assets, prior results, reference library and page styling are retained.

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>一万个布局上的双臂基座评测 · KnowinMem</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../style.css"></head>
+<body><header class="topbar"><a class="brand" href="../"><span class="brand-mark">km</span><strong>KnowinMem</strong></a><a href="../#blog">研究 Blog ↗</a></header>
+<article class="article-page"><header><p class="eyebrow">ROBOTWIN BASE POLICY / 2026.11.07</p><h1>一万个布局上的<br>双臂基座评测</h1><p class="intro">冻结 X-VLA-RoboTwin2 在 50 个双臂任务上完成清洁与随机化场景评测。10,000 个预先固定的布局连接基座表现与后续三种上下文策略的匹配比较。</p></header>
+<h2>01 / 从完整目录读取基座表现</h2>
+<p>每个任务包含两种场景配置，每种配置使用 100 个专家准入布局。清洁场景完成 3,302 / 5,000 次任务，成功率 66.04%；随机化场景完成 1,184 / 5,000 次，成功率 23.68%。全部 100 个任务—场景组合的结果同时发布，读者可以从总体表进入逐任务目录。</p>
+<div class="table-wrap"><table><thead><tr><th>模型</th><th>场景</th><th class="num">成功 / 布局</th><th class="num">成功率</th></tr></thead><tbody><tr><td>Frozen X-VLA-RoboTwin2</td><td class="nowrap">清洁</td><td class="num">3,302 / 5,000</td><td class="num">66.04%</td></tr><tr><td>Frozen X-VLA-RoboTwin2</td><td class="nowrap">随机化</td><td class="num">1,184 / 5,000</td><td class="num">23.68%</td></tr></tbody></table></div>
+<div class="actions"><a class="btn primary" href="../#results/robotwin">查看 50 个任务 →</a><a class="btn" href="../data/robotwin-base.csv" download>逐任务 CSV ↓</a></div>
+<h2>02 / 固定布局、指令与动作预算</h2>
+<p>本次执行沿用 X-VLA 发布客户端的任务名指令：将任务名下划线替换为空格。每例最多调用策略 10 次，每次输出 30 条动作命令，任务成功即停止。300 条命令是控制指令上限；视频采用其各自标注的观测帧时间基准。</p>
+<p>布局在策略评测前通过专家准入并冻结。评测覆盖 50 个任务、两种场景和全部 10,000 个唯一布局，成功结果来自执行时的任务判定器。保存轨迹按布局身份、模型来源、动作与状态记录完成验收，再按任务和场景汇总。</p>
+<p>协议入口见 <a href="https://github.com/2toinf/X-VLA/tree/6c4ecfb8be458ae7c0c96094e4b0add4174f4fe2">X-VLA 固定源码版本</a>；场景与任务来自 <a href="https://robotwin-platform.github.io/doc/">RoboTwin 2.0</a>。这组结果对应上述任务名指令、冻结布局和客户端执行预算。</p>
+<h2>03 / 将基座与三种上下文策略连接起来</h2>
+<p>KIM 的配对、成功与常量上下文模型共享这套布局、指令和动作预算。三模型各完成固定的 1,200 次更新，评测使用末次权重，底座保持冻结。三种上下文条件各执行 10,000 次，形成与基座逐布局对应的四条件比较。</p>
+<p>截至 2026-11-07 19:50 UTC，三种上下文条件各有 300 次执行完成轨迹验收，合计 900 个条件—布局组合，覆盖共同的 300 个布局。剩余本地分片继续运行，云端合并任务已提交排队；完整结果按既定配对分析流程汇总。</p>
+<div class="actions"><a class="btn" href="../#experiments">实验进度 →</a><a class="btn" href="bimanual-adaptation.html">三模型训练纪要 →</a><a class="btn" href="bimanual-rollouts.html">三相机执行视频 →</a></div>
+<h2>数据与下载</h2>
+<p>结果面板与下载文件来自同一全量汇总。逐任务 CSV 共 100 行，分别记录任务、场景、成功数、布局数与成功率；JSON 同时保存执行协议和来源摘要的 SHA256，便于后续版本核对。</p>
+<div class="actions"><a class="btn" href="../data/robotwin-base.json" download>结果与协议 JSON ↓</a><a class="btn" href="../data/results.csv" download>跨实验汇总 CSV ↓</a></div>
+<footer class="footer"><span>KnowinSpatial Lab · KnowinMem</span><a href="../#results/robotwin">返回基座结果 →</a></footer></article></body></html>

@@ -63,3 +63,5 @@ paired_confirmation,first_failures,Constant context,92,124,74.193548,,,
 l20_latency,28_fixed_inputs,上下文关闭,,280,,141.4,146.2,3.697
 l20_latency,28_fixed_inputs,成功上下文,,280,,157.2,166.4,3.697
 l20_latency,28_fixed_inputs,完整 KIM 上下文,,280,,169.7,182.5,3.697
+robotwin_base,demo_clean,Frozen X-VLA-RoboTwin2,3302,5000,66.040000,,,
+robotwin_base,demo_randomized,Frozen X-VLA-RoboTwin2,1184,5000,23.680000,,,

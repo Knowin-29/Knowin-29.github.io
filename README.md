@@ -50,8 +50,7 @@ two aggregate rows in `results.csv`. The 19:50 UTC snapshot records 900 accepted
 KIM condition-layout executions (300 per condition on 300 shared layouts).
 Original assets, prior results, reference library and page styling are retained.
 
-The November 8, 00:02 UTC progress update records 1,300 accepted KIM condition-layout
-executions: 500 paired, 400 successful-context and 400 constant-context. All
-three conditions are complete on 400 shared layouts. The local continuation
-has accepted 400 of 600 executions, with the remaining 200 continuing on two
-L20 GPUs; the cloud allocation for 28,500 executions remains queued.
+The November 8, 02:16 UTC progress update records 1,500 accepted KIM condition-layout
+executions: 500 per condition on 500 shared layouts. The two-L20 continuation
+completed all 600 executions and independent trace checks; its coordinator and
+workers exited. The cloud allocation for 28,500 executions remains queued.
